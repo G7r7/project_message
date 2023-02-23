@@ -1,0 +1,79 @@
+﻿{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the message"
+    },
+    "text": {
+      "type": "string",
+      "description": "The text content of the message"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp when the message was sent"
+    },
+    "sender": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the message sender"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the message sender"
+        }
+      },
+      "required": ["id", "name"]
+    },
+    "inputFields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the input field"
+          },
+          "label": {
+            "type": "string",
+            "description": "Label for the input field"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the input field (e.g. 'text', 'number')"
+          },
+          "defaultValue": {
+            "type": "string",
+            "description": "Default value for the input field"
+          }
+        },
+        "required": ["id", "label", "type"]
+      }
+    },
+    "checkboxes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the checkbox"
+          },
+          "label": {
+            "type": "string",
+            "description": "Label for the checkbox"
+          },
+          "checked": {
+            "type": "boolean",
+            "description": "Whether the checkbox is checked or not"
+          }
+        },
+        "required": ["id", "label", "checked"]
+      }
+    }
+  },
+  "required": ["id", "text", "timestamp", "sender"]
+}
