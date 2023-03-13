@@ -1,0 +1,68 @@
+﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="content">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="free_text" type="FreeTextType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="question" type="QuestionType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="dropdown" type="DropdownType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="checkbox" type="CheckboxType" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="date_picker" type="DatePickerType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="FreeTextType">
+    <xs:sequence>
+      <xs:element name="label" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="QuestionType">
+    <xs:sequence>
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="value" type="xs:string" />
+      <xs:element name="response" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DropdownType">
+    <xs:sequence>
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="values" type="ValueListType" />
+      <xs:choice>
+        <xs:sequence>
+          <xs:element name="isMultiSelected" type="xs:boolean" />
+          <xs:element name="selectedValue" type="SelectedValueListType" />
+        </xs:sequence>
+        <xs:element name="selectedValue" type="xs:string" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CheckboxType">
+    <xs:sequence>
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="checked" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DatePickerType">
+    <xs:sequence>
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="date" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ValueListType">
+    <xs:sequence>
+      <xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SelectedValueListType">
+    <xs:sequence>
+      <xs:element name="selectedValue" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

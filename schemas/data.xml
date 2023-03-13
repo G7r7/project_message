@@ -1,0 +1,26 @@
+﻿<content>
+  <free_text>
+    <label>Enter your name:</label>
+  </free_text>
+  <question>
+    <label>What is your favorite color?</label>
+    <value>Blue</value>
+  </question>
+  <dropdown>
+    <label>Select your favorite fruit:</label>
+    <values>
+      <value>Apple</value>
+      <value>Orange</value>
+      <value>Banana</value>
+    </values>
+    <selectedValue>Apple</selectedValue>
+  </dropdown>
+  <checkbox>
+    <label>Do you like pizza?</label>
+    <checked>test</checked>
+  </checkbox>
+  <date_picker>
+    <label>Select a date:</label>
+    <date>2022-12-31</date>
+  </date_picker>
+</content>
