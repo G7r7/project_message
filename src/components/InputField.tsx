@@ -1,16 +1,8 @@
-﻿import { TextField } from "@fluentui/react";
-
-export function InputField(message: any, fieldName: string) {
-  const handleOnChange = (
-    event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
-    newValue?: string | undefined
-  ) => {
-    message[fieldName] = newValue;
-  };
-
+﻿export function InputField({ title }: { title: string }) {
   return (
-    <div>
-      <TextField onChange={handleOnChange} label={fieldName} />
-    </div>
+    <>
+      <div>{title}</div>
+      <input type="text" />
+    </>
   );
 }
